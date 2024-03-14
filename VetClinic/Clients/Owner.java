@@ -1,4 +1,4 @@
-package clients;
+package VetClinic.Clients;
 
 public class Owner {
     public String name;

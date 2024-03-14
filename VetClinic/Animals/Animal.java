@@ -1,8 +1,12 @@
-package clients;
+package VetClinic.Animals;
 
 import java.time.LocalDate;
+//абстрактный класс: нельзя сделать множественное наследование;
+//класс хранит состояние и поведение; его нельзя создать через new;
 
-public class Animal {
+import VetClinic.Clients.Owner;
+
+public abstract class Animal {
     //поля класса
     protected String name; // состояние(поведение)
     protected float weight;
@@ -23,16 +27,15 @@ public class Animal {
     }
 
     //конструкторы(вызывается первым)
-    private void sleep(){
+    /*private void sleep(){
         System.out.println(getType() + " sleep");
     }
     private void wakeUp(){
         System.out.println(getType() + " Wakeup");
-    }
-    private void eat(){
-        System.out.println(getType() + " Eat");
-    }
-    private void play(){
+    }*/
+    public abstract void eat();
+
+    /*private void play(){
         System.out.println(getType() + " Play");
     }
     public void toGo(){
@@ -43,26 +46,7 @@ public class Animal {
     }
     public void swim(){
         System.out.println(getType() + " Swim");
-    }
-
-    public void live() {
-        wakeUp();
-        eat();
-        play();
-        sleep();
-    }
-    public void wolk(){
-        live();
-        toGo();
-    }
-    public void flying(){
-        live();
-        fly(); 
-    }
-    public void sailing(){
-        live();
-        swim();
-    }
+    }*/
 
     public String getType(){
         return getClass().getSimpleName();

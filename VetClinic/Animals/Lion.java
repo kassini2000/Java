@@ -1,8 +1,10 @@
-package clients;
+package VetClinic.Animals;
 
 import java.time.LocalDate;
 
-public class Lion extends Animal{
+import VetClinic.Clients.Owner;
+
+public class Lion extends Animal implements Goable{
     public Object wakeUp;
 
     //конструктор(метод)
@@ -13,6 +15,16 @@ public class Lion extends Animal{
 
     public Lion(){
         super();
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("Котик ест");
+    }
+
+    @Override
+    public double run() {
+        return 5;
     }
    }
 
