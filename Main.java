@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import VetClinic.VeterinaryClinic;
@@ -14,6 +15,11 @@ import VetClinic.Animals.Lion;
 import VetClinic.Animals.Monkey;
 import VetClinic.Animals.Swimable;
 import VetClinic.Clients.Owner;
+import VetClinic.Pharmacy.Medicine2;
+import VetClinic.Pharmacy.MedicineComponent;
+import VetClinic.Pharmacy.Impl.Asitromin;
+import VetClinic.Pharmacy.Impl.Penicilinium;
+import VetClinic.Pharmacy.Impl.Vetbicid;
 import VetClinic.Staff.Doctor;
 import VetClinic.Staff.Nurse;
 
@@ -47,7 +53,7 @@ public class Main {
         //полиморфизм
         /*List<Animal> animals = new ArrayList<>();*/
 
-        Lion lion = new Lion("Лева", 300, LocalDate.now(), new Owner());
+        /*Lion lion = new Lion("Лева", 300, LocalDate.now(), new Owner());
         Horse horse = new Horse("ВИП", 500, LocalDate.now(), new Owner());
         Duck duck = new Duck("Кря", 0.5f,LocalDate.now(), new Owner());
         Monkey monkey = new Monkey("Бату", 3,LocalDate.now(), new Owner());
@@ -61,6 +67,29 @@ public class Main {
         List<Animal> swimmingAnimals = VeterinaryClinic.getFlyAnimals(animals);
         System.out.println(runningAnimals);
         System.out.println(flyingAnimals);
-        System.out.println(swimmingAnimals);
+        System.out.println(swimmingAnimals);*/
+        ArrayList<MedicineComponent> medList = new ArrayList<>();
+        Asitromin asitr = new Asitromin("Asitro", 50, 25);
+        Penicilinium penicilinium = new Penicilinium("Penicil", 30, 50);
+        Vetbicid vetbic = new Vetbicid("Vetbic", 40, 30);
+        Medicine2 medicine1 = new Medicine2();
+        medicine1.addComponent(asitr).addComponent(penicilinium).addComponent(vetbic);
+//        for (MedicineComponent companent : medicine1) {
+//
+//        }
+//        Iterator<MedicineComponent> med = medicine1;
+//        while (medicine1.hasNext()) {
+//            System.out.println(med.next());
+//        }
+//        for (MedicineComponent component : medicine1) {
+//            System.out.println(component);
+//        }
+        medList.add(asitr);
+        medList.add(penicilinium);
+        medList.add(vetbic);
+        System.out.println(medList);
+        Collections.sort(medList, (o1, o2) -> 0);
+        System.out.println(medList);
+
     }
 }
